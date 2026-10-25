@@ -1,0 +1,253 @@
+/* PLAYFORGE — Dark Theme UI */
+
+:root {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-panel: #0f3460;
+  --bg-input: #1a1a3e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0b0;
+  --text-accent: #00d4ff;
+  --accent-green: #00e676;
+  --accent-red: #ff5252;
+  --accent-yellow: #ffd740;
+  --accent-blue: #448aff;
+  --border: #2a2a4a;
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Consolas', monospace;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--bg-secondary);
+  padding: 16px 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent-blue);
+  -webkit-app-region: drag;
+}
+
+header h1 {
+  font-size: 22px;
+  color: var(--text-accent);
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+main {
+  flex: 1;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+}
+
+.panel h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.status-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.status-item .label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-item .value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Status colors */
+.status-connected { color: var(--accent-green) !important; }
+.status-connecting { color: var(--accent-yellow) !important; }
+.status-disconnected { color: var(--text-secondary) !important; }
+.status-error { color: var(--accent-red) !important; }
+
+/* Controls */
+.controls-panel {
+  grid-column: 1 / -1;
+}
+
+.controls-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.movement-row {
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.input-target {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.input-target:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+}
+
+.btn-action {
+  background: var(--accent-blue);
+  color: #ffffff;
+}
+
+.btn-action:hover:not(:disabled) {
+  background: #2979ff;
+  transform: translateY(-1px);
+}
+
+.btn-action-stop {
+  background: #ff9100;
+  color: #1a1a2e;
+}
+
+.btn-action-stop:hover:not(:disabled) {
+  background: #ff6d00;
+  transform: translateY(-1px);
+}
+
+.btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-start {
+  background: var(--accent-green);
+  color: #1a1a2e;
+}
+
+.btn-start:hover:not(:disabled) {
+  background: #00c853;
+  transform: translateY(-1px);
+}
+
+.btn-stop {
+  background: var(--accent-red);
+  color: white;
+}
+
+.btn-stop:hover:not(:disabled) {
+  background: #ff1744;
+  transform: translateY(-1px);
+}
+
+/* Activity Log */
+.log-panel {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.log-container {
+  flex: 1;
+  background: #0a0a1a;
+  border-radius: 4px;
+  padding: 10px;
+  overflow-y: auto;
+  min-height: 150px;
+  max-height: 300px;
+}
+
+#log-output {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+footer {
+  background: var(--bg-secondary);
+  padding: 8px 24px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}

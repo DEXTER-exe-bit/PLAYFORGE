@@ -1,0 +1,27 @@
+{
+  "name": "playforge",
+  "version": "0.1.0",
+  "description": "AI companion for Minecraft Java Edition 1.21.4",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/safety.test.js tests/config.test.js tests/adapter.test.js tests/follow.test.js"
+  },
+  "keywords": [
+    "minecraft",
+    "ai",
+    "companion",
+    "mineflayer"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "electron": "^33.0.0",
+    "mineflayer": "^4.39.0",
+    "mineflayer-pathfinder": "^2.4.5"
+  },
+  "allowScripts": {
+    "electron@33.4.11": true
+  }
+}

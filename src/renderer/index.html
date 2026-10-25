@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>PLAYFORGE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>⛏ PLAYFORGE</h1>
+    <span class="subtitle">Minecraft AI Companion</span>
+  </header>
+
+  <main>
+    <!-- Status Panel -->
+    <section class="panel" id="status-panel">
+      <h2>Connection Status</h2>
+      <div class="status-grid">
+        <div class="status-item">
+          <span class="label">Status</span>
+          <span class="value" id="conn-status">Disconnected</span>
+        </div>
+        <div class="status-item">
+          <span class="label">Server</span>
+          <span class="value" id="conn-server">—</span>
+        </div>
+        <div class="status-item">
+          <span class="label">Version</span>
+          <span class="value" id="conn-version">—</span>
+        </div>
+        <div class="status-item">
+          <span class="label">Username</span>
+          <span class="value" id="conn-username">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bot State Panel -->
+    <section class="panel" id="state-panel">
+      <h2>Bot State</h2>
+      <div class="status-grid">
+        <div class="status-item">
+          <span class="label">Health</span>
+          <span class="value" id="bot-health">—</span>
+        </div>
+        <div class="status-item">
+          <span class="label">Food</span>
+          <span class="value" id="bot-food">—</span>
+        </div>
+        <div class="status-item">
+          <span class="label">Position</span>
+          <span class="value" id="bot-position">—</span>
+        </div>
+        <div class="status-item">
+          <span class="label">AI</span>
+          <span class="value" id="ai-status">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls -->
+    <section class="panel controls-panel">
+      <h2>Controls</h2>
+      <div class="controls-row">
+        <button id="btn-start" class="btn btn-start">▶ Start Bot</button>
+        <button id="btn-stop" class="btn btn-stop" disabled>⏹ Stop Bot</button>
+      </div>
+      <div class="controls-row movement-row">
+        <input type="text" id="target-player" placeholder="Player username (leave empty for auto)" class="input-target">
+        <button id="btn-follow" class="btn btn-action" disabled>🏃 Follow</button>
+        <button id="btn-come-here" class="btn btn-action" disabled>📍 Come Here</button>
+        <button id="btn-stop-move" class="btn btn-action-stop" disabled>🛑 Stop Move</button>
+      </div>
+    </section>
+
+    <!-- Activity Log -->
+    <section class="panel log-panel">
+      <h2>Activity Log</h2>
+      <div class="log-container" id="log-container">
+        <pre id="log-output">Waiting for events...</pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>PLAYFORGE v0.1.0 — Minecraft 1.21.4 (Vanilla)</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
